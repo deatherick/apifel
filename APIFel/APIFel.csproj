@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Controllers\PingService.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="SoapCore" Version="1.1.0.2" />

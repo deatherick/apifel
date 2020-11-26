@@ -56,7 +56,9 @@ namespace APIFel
             });
 
             app.UseEndpoints(endpoints => {
-                endpoints.UseSoapEndpoint<PingController>("/Ping.asmx", new BasicHttpBinding());
+                endpoints.UseSoapEndpoint<PingController>("/ApiFel.asmx", new BasicHttpBinding());
+                endpoints.UseSoapEndpoint<PingController>("/ApiFel/Login.asmx", new BasicHttpBinding());
+                endpoints.UseSoapEndpoint<PingController>("/ApiFel/GeneraXML.asmx", new BasicHttpBinding()); 
             });
         }
     }
