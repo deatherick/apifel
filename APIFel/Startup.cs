@@ -1,18 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.ServiceModel;
-using System.Threading.Tasks;
 using APIFel.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using SoapCore;
 
 namespace APIFel
@@ -57,8 +50,8 @@ namespace APIFel
 
             app.UseEndpoints(endpoints => {
                 endpoints.UseSoapEndpoint<PingController>("/ApiFel.asmx", new BasicHttpBinding());
-                endpoints.UseSoapEndpoint<PingController>("/ApiFel/Login.asmx", new BasicHttpBinding());
-                endpoints.UseSoapEndpoint<PingController>("/ApiFel/GeneraXML.asmx", new BasicHttpBinding()); 
+                endpoints.UseSoapEndpoint<LoginController>("/ApiFel/Login.asmx", new BasicHttpBinding());
+                endpoints.UseSoapEndpoint<GeneraXmlController>("/ApiFel/GeneraXML.asmx", new BasicHttpBinding()); 
             });
         }
     }
