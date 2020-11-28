@@ -1,5 +1,6 @@
 using System.ServiceModel;
 using APIFel.Controllers;
+using APIFel.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -24,9 +25,13 @@ namespace APIFel
         {
             services.AddSoapCore();
             services.TryAddSingleton<PingController>();
+            services.TryAddSingleton<LoginController>();
+            services.TryAddSingleton<GeneraXmlController>();
             services.AddMvc();
 
             services.AddControllers();
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
