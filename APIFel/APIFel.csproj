@@ -1,7 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>37853d82-2855-4981-8591-a265723cc34f</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,8 +12,17 @@
 
   <ItemGroup>
     <PackageReference Include="SoapCore" Version="1.1.0.2" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.7.0" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.4.*" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.4.*" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Services\" />
+    <Reference Include="FirmaXadesNet">
+      <HintPath>..\FirmaXadesNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 </Project>

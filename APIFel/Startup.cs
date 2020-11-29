@@ -27,6 +27,7 @@ namespace APIFel
             services.TryAddSingleton<PingController>();
             services.TryAddSingleton<LoginController>();
             services.TryAddSingleton<GeneraXmlController>();
+            services.TryAddSingleton<CertificarDocumentoController>();
             services.AddMvc();
 
             services.AddControllers();
@@ -56,7 +57,8 @@ namespace APIFel
             app.UseEndpoints(endpoints => {
                 endpoints.UseSoapEndpoint<PingController>("/ApiFel.asmx", new BasicHttpBinding());
                 endpoints.UseSoapEndpoint<LoginController>("/ApiFel/Login.asmx", new BasicHttpBinding());
-                endpoints.UseSoapEndpoint<GeneraXmlController>("/ApiFel/GeneraXML.asmx", new BasicHttpBinding()); 
+                endpoints.UseSoapEndpoint<GeneraXmlController>("/ApiFel/GeneraXML.asmx", new BasicHttpBinding());
+                endpoints.UseSoapEndpoint<CertificarDocumentoController>("/ApiFel/CertificarDocumento.asmx", new BasicHttpBinding());
             });
         }
     }
